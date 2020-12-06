@@ -64,5 +64,4 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
-*.png
 *.stats
