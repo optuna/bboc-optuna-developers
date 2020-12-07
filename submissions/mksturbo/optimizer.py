@@ -28,6 +28,12 @@ from gpytorch.models import ExactGP
 
 
 class GP(ExactGP):
+    """
+    This class is a derivative of https://github.com/uber-research/TuRBO/blob/master/turbo/gp.py
+    and released under the same license as https://github.com/uber-research/TuRBO.
+    See https://github.com/uber-research/TuRBO/blob/master/LICENSE.md.
+    """
+
     def __init__(self, train_x, train_y, likelihood, lengthscale_constraint, outputscale_constraint, ard_dims, nu=2.5):
         super(GP, self).__init__(train_x, train_y, likelihood)
         self.ard_dims = ard_dims
@@ -56,7 +62,13 @@ class RBFGP(ExactGP):
 
 
 def train_gp(train_x, train_y, use_ard, num_steps, hypers={}, is_rbf=False, nu=2.5):
-    """Fit a GP model where train_x is in [0, 1]^d and train_y is standardized."""
+    """
+    Fit a GP model where train_x is in [0, 1]^d and train_y is standardized.
+
+    This function is a derivative of https://github.com/uber-research/TuRBO/blob/master/turbo/gp.py
+    and released under the same license as https://github.com/uber-research/TuRBO.
+    See https://github.com/uber-research/TuRBO/blob/master/LICENSE.md.
+    """
     assert train_x.ndim == 2
     assert train_y.ndim == 1
     assert train_x.shape[0] == train_y.shape[0]
@@ -338,7 +350,13 @@ class TurboOptimizer(AbstractOptimizer):
         return suggestions
 
     def _select_candidates(self, X_cand, y_cand):
-        """Select candidates from samples from all trust regions."""
+        """
+        Select candidates from samples from all trust regions.
+
+        This method is a derivative of https://github.com/uber-research/TuRBO/blob/master/turbo/turbo_1.py
+        and released under the same license as https://github.com/uber-research/TuRBO.
+        See https://github.com/uber-research/TuRBO/blob/master/LICENSE.md.
+        """
         assert X_cand.shape == (4, self.turbo.n_cand, self.turbo.dim)
         assert y_cand.shape == (4, self.turbo.n_cand, self.turbo.batch_size)
         assert X_cand.min() >= 0.0 and X_cand.max() <= 1.0 and np.all(np.isfinite(y_cand))
@@ -395,7 +413,13 @@ class TurboOptimizer(AbstractOptimizer):
 
 
     def _create_candidates(self, X, fX, length, n_training_steps, hypers, is_rbf=False, nu=2.5):
-        """Generate candidates assuming X has been scaled to [0,1]^d."""
+        """
+        Generate candidates assuming X has been scaled to [0,1]^d.
+
+        This method is a derivative of https://github.com/uber-research/TuRBO/blob/master/turbo/turbo_1.py
+        and released under the same license as https://github.com/uber-research/TuRBO.
+        See https://github.com/uber-research/TuRBO/blob/master/LICENSE.md.
+        """
         # Pick the center as the point with the smallest function values
         # NOTE: This may not be robust to noise, in which case the posterior mean of the GP can be used instead
         assert X.min() >= 0.0 and X.max() <= 1.0
