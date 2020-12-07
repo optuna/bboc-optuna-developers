@@ -74,4 +74,4 @@ $ python run_benchmark.py --task large --repeat 3 --parallelism 16 --out ./outpu
 
 ## LICENSE
 
-[Apache License 2.0](./LICENSE)
+Our implementation is released under [Apache License 2.0](./LICENSE) license except for the code derived from TuRBO.
