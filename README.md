@@ -60,6 +60,14 @@ $ python run_benchmark.py --task large --repeat 3 --parallelism 16 --out ./outpu
 
 </details>
 
+## Notebooks
+
+### [Analyzing Bayesmark Results for Each ML Model](./notebooks/Analyzing%20Bayesmark%20Results%20for%20Each%20ML%20Model.ipynb)
+
+![plot-cv-generalization](./img/plot-cv-generalization.png)
+
+This notebook demonstrates how to visualize benchmark results of Bayesmark.
+
 
 ## Team Members
 
