@@ -1,3 +1,8 @@
+   `submissions/mksturbo/turbolib.py` is derived
+   from https://github.com/uber-research/TuRBO, hence it is distributed under
+   LICENSE.turbo. The rest of the files are distributed under Apache License
+   Version 2.0.
+
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
