@@ -7,8 +7,6 @@
 #                                                                             #
 # See the License for the specific language governing permissions and         #
 # limitations under the License.                                              #
-#                                                                             #
-# Code were changed by the Optuna developers on October 14, 2020.             #
 ###############################################################################
 from copy import deepcopy
 import math
